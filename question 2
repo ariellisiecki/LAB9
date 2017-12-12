@@ -1,0 +1,54 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp18
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var fruits = new[] { "apple", "mango", "orange", "apricot", "cherry", "grape", "blueberry" };
+
+            Console.WriteLine("fruits:");
+            foreach (var element in fruits)
+            {
+                Console.WriteLine($"{element}");
+            }
+            {
+                var items = new List<string>();
+                Console.WriteLine(items.Count + " " + items.Capacity);
+                items.Insert(0, "apple ");
+                items.Insert(0, "apricot");
+                for (var j = 0; j < items.Count; ++j)
+                {
+                    Console.Write("\n" + items[j].ToString() + "\n");
+
+                }
+                items.Add(" mango ");
+                items.Add(" orange ");
+                items.Add(" cherry ");
+                items.Add(" grape ");
+                items.Add(" blueberry ");
+                var startswithA = from item in items
+                                  let uppercaseSring = item.ToUpper()
+                                  where uppercaseSring.StartsWith("A")
+                                  orderby uppercaseSring
+                                  select uppercaseSring;
+
+                Console.WriteLine("******************");
+                foreach (var item in startswithA)
+                {
+                    Console.Write("\n" + item.ToString() + "\n");
+                  
+
+                }
+
+
+
+            }
+        }
+    }
+}
