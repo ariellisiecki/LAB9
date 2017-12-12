@@ -1,0 +1,76 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp20
+{
+    class Program
+    {
+
+
+
+        static void Main(string[] args)
+        {
+            List<string> month = new List<string>();
+
+            var items = new List<string>();
+
+            Console.WriteLine("months: " + $"Count = {items.Count}; Capacity = {items.Capacity}");
+
+
+            items.Insert(0, "january");
+            items.Insert(0, "febuary");
+            items.Insert(0, "march");
+            items.Insert(0, "april");
+            items.Insert(0, "may");
+            items.Insert(0, "june");
+
+            Console.WriteLine("show:" + $"count = {items.Count}; capacity = {items.Capacity} ");
+
+            Console.WriteLine(
+
+                "\n Display list:");
+
+            for (var i = 0; i < items.Count; i++)
+            {
+                Console.Write($" {items[i]}");
+            }
+
+            Console.Write(
+
+                "\n Display list 2:");
+
+            foreach (var item in items)
+            {
+                Console.Write($" {item}");
+            }
+           
+
+            items.Insert(0, "january");
+            items.Insert(0, "febuary");
+            items.Insert(0, "march");
+            items.Insert(0, "april");
+            items.Insert(0, "may");
+            items.Insert(0, "june");
+
+            Console.Write("items contains:");
+            foreach (var item in items)
+            {
+                Console.Write($" {item}");
+
+            }
+            Console.WriteLine();
+
+            var StartsWith =
+                from item in items
+                let uppercaseString = item.ToUpper()
+                where uppercaseString.StartsWith("bur")
+                orderby uppercaseString
+                select uppercaseString;
+
+            
+        }
+    }
+}
