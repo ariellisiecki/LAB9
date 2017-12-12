@@ -1,0 +1,50 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp19
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            List<string> month = new List<string>();
+
+            var items = new List<string>();
+
+            Console.WriteLine("months: " + $"Count = {items.Count}; Capacity = {items.Capacity}");
+            items.Add("july");
+            items.Add("august");
+            items.Add("september");
+            items.Add("october");
+            items.Add("november");
+            items.Add("december");
+
+            items.Insert(0, "jan");
+            items.Insert(0, "feb");
+            items.Insert(0, "march");
+            items.Insert(0, "april");
+            items.Insert(0, "may");
+            items.Insert(0, "june");
+
+            Console.WriteLine("show:" + $"count = {items.Count}; capacity = {items.Capacity} ");
+
+            Console.WriteLine(
+
+                "\n Display list:");
+
+            for(var i = 0; i < items.Count; i++)
+            {
+                Console.Write($" {items[i]}");
+            }
+
+            Console.Write(
+                
+                "\n Display list 2:");
+
+            foreach (var item in items)
+            {
+                Console.Write($" {item}");
+            }
